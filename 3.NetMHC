@@ -1,0 +1,1 @@
+netMHCpan -f tumor_only_P9tf_mutations_epitopes_output.fasta -a HLA-A24:02,HLA-A11:01,HLA-B44:03,HLA-B57:01,HLA-C06:02,HLA-C04:01 -l 9 -BA 1 -v 1 > test_predictions.out
