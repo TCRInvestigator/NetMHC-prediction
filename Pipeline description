@@ -42,4 +42,17 @@ Step 4: Filter for HLA binders
   For SNVs
     --> Filter out mutated peptides whose WT peptide counterparts have EL_rank < 2
   ---------------------------
-  Output: Excel containing HLA binding 9-mer peptides
+  Output: Excel containing selected 9-mer peptides and the mutations which they are derived from
+
+Step 5: Filter for frequently mutated and highly expressed mutations
+  Input: Step 4 output, mutation VAF, tumor RNA-seq TPM
+  Process:
+  --> Plot scatter plot of peptides using VAF of mutation as x axis and TPM of gene as y axis
+  --> Select 20 peptides in the upper right area
+  Output: Excel containing selected 9-mer peptides
+
+Step 6: Filter for extinct peptides post anti-PD-1 treatment
+  Input: Step 5 output
+  Process:
+  --> Filter out peptides that are present at both before treatment and replase timepoint
+  Output: Excel containing selected 9-mer peptides
