@@ -1,0 +1,5 @@
+Step 1: mutation selection
+WGS output
+--> Filter for exonic nonsynonymous variants
+--> Filter out polymorphisms from dbSNP (build 150)
+ Subtract same mutations (defined as same “AAChange”) from paired PBMCs
