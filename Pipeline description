@@ -1,5 +1,12 @@
 Step 1: mutation selection
-WGS output
---> Filter for exonic nonsynonymous variants
---> Filter out polymorphisms from dbSNP (build 150)
- Subtract same mutations (defined as same “AAChange”) from paired PBMCs
+  Input: WGS output
+  Process:
+  --> Filter for exonic nonsynonymous variants
+  --> Filter out polymorphisms from dbSNP (build 150)
+  --> Subtract same mutations (defined as same “AAChange”) from paired PBMCs
+  Output: filtered mutation excel file
+
+Step 2: epitope generation
+  Input: “AAChange” from Step 1 output
+  Process:
+  --> 
