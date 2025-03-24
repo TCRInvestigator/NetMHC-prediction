@@ -26,12 +26,13 @@ Step 2: epitope generation
     --> Translate mutated mRNA sequences to mutated protein sequences
     --> Generate 15-mer peptides covering full-length WT and mutated protein sequences
     --> Filter out duplicated peptides and keep only peptides unique to mutated protein sequences
+    --> Filter against uniprot human proteome
   ---------------------------
   Output: fasta files containing 15-mer peptides
 
 Step 3: NetMHC prediction
   Input: Step 2 output, patient HLA allele information
-  Process: Use NetMHCpan - 4.1 to predict peptides' elution ranks to the patient's HLA alleles 
+  Process: Use NetMHCpan - 4.1 to predict the elution ranks of 8-11 mer peptides further generated from 15-mer peptides to the patient's HLA alleles 
   Output: Excel containing prediction results for all HLA alleles
 
 Step 4: Filter for HLA binders
@@ -40,9 +41,9 @@ Step 4: Filter for HLA binders
   --> Filter for peptides with EL_rank < 0.5 (strong binders) or EL_rank < 2 (both weak and strong binders)
   ---------------------------
   For SNVs
-    --> Filter out mutated peptides whose WT peptide counterparts have EL_rank < 2
+    --> Filter out mutated peptides with EL_rank < 0.5 (strong binders) or EL_rank < 2 (both weak and strong binders) whose WT peptide counterparts have EL_rank > 2
   ---------------------------
-  Output: Excel containing selected 9-mer peptides and the mutations which they are derived from
+  Output: Excel containing selected 8-11 mer peptides and the mutations which they are derived from
 
 Step 5: Filter for frequently mutated and highly expressed mutations
   Input: Step 4 output, mutation VAF, tumor RNA-seq TPM
