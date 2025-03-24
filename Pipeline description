@@ -16,7 +16,7 @@ Step 2: epitope generation
   ---------------------------
   For SNVs
     --> Apply protein changes to fetched protein sequences to generate mutated protein sequences
-    --> Generate 9-mer peptides containing the mutation position from both WT and mutated protein sequences (9 WT peptides and 9 mutated peptides for each SNV)
+    --> Generate 15-mer peptides containing the mutation position from both WT and mutated protein sequences (9 WT peptides and 9 mutated peptides for each SNV)
   ---------------------------
   For Indels
     --> Fetch mRNA sequences using the selected versioned transcript ID
@@ -24,10 +24,10 @@ Step 2: epitope generation
     --> Trim mRNA sequences to the start codon
     --> Apply nucleotide changes to trimmed mRNA sequences to generate mutated mRNA sequences
     --> Translate mutated mRNA sequences to mutated protein sequences
-    --> Generate 9-mer peptides covering full-length WT and mutated protein sequences
+    --> Generate 15-mer peptides covering full-length WT and mutated protein sequences
     --> Filter out duplicated peptides and keep only peptides unique to mutated protein sequences
   ---------------------------
-  Output: fasta files containing 9-mer peptides
+  Output: fasta files containing 15-mer peptides
 
 Step 3: NetMHC prediction
   Input: Step 2 output, patient HLA allele information
